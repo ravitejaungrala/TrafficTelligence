@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Volume Estimation</title>
+    <style>
+       body {
+    background-image: url('https://i.postimg.cc/mrP4fRDs/Gemini-Generated-Image-blcsoxblcsoxblcs.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+        .container {
+
+            display: inline-block;
+            margin-top: 20px;
+        }
+        input, select, button {
+            margin: 10px;
+            padding: 8px;
+            width: 90%;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        h1,h2{
+          text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Traffic Volume Estimation</h1>
+
+    <div class="container">
+        <h2>Please enter the following details</h2>
+        <form action="{{ url_for('predict')}}" method="post">
+            <label for="holiday">Holiday:</label>
+            <select id="holiday" name="holiday">
+                <option value="7">None</option>
+                <option value="1">Columbus Day</option>
+                <option value="10">Veterans Day</option>
+                <option value="9">Thanksgiving Day</option>
+                <option value="0">Christmas Day</option>
+                <option value="6">New Year's Day</option>
+                <option value="11">Washington's Birthday</option>
+                <option value="5">Memorial Day</option>
+                <option value="2">Independence Day</option>
+                <option value="8">State Fair</option>
+                <option value="3">Labor Day</option>
+                <option value="4">Martin Luther King Jr Day</option>
+            </select>&nbsp;&nbsp;<br>
+            <br>
+
+            <label>Temperature:</label>
+            <input type="number" name="temp" placeholder="Enter temperature" required />
+<br>
+            <label>Rain:</label>
+            <input type="number" min="0" max="1" name="rain" placeholder="0 or 1" required />
+<br>
+            <label>Snow:</label>
+            <input type="number" min="0" max="1" name="snow" placeholder="0 or 1" required />
+<br>
+            <label for="weather">Weather:</label>
+            <select id="weather" name="weather">
+                <option value="1">Clouds</option>
+                <option value="0">Clear</option>
+                <option value="6">Rain</option>
+                <option value="2">Drizzle</option>
+                <option value="5">Mist</option>
+                <option value="4">Haze</option>
+                <option value="3">Fog</option>
+                <option value="10">Thunderstorm</option>
+                <option value="8">Snow</option>
+                <option value="9">Squall</option>
+                <option value="7">Smoke</option>
+            </select>&nbsp;&nbsp;<br>
+            <br>
+
+            <label>Year:</label>
+            <input type="number" min="2012" max="2022" name="year" placeholder="Enter year" required />
+<br>
+            <label>Month:</label>
+            <input type="number" min="1" max="12" name="month" placeholder="Enter month" required />
+<br>
+            <label>Day:</label>
+            <input type="number" min="1" max="31" name="day" placeholder="Enter day" required />
+<br>
+            <label>Hours:</label>
+            <input type="number" min="0" max="24" name="hours" placeholder="Enter hour" required />
+<br>
+            <label>Minutes:</label>
+            <input type="number" min="0" max="60" name="minutes" placeholder="Enter minutes" required />
+<br>
+            <label>Seconds:</label>
+            <input type="number" min="0" max="60" name="seconds" placeholder="Enter seconds" required />
+<br>
+            <br><br>
+            <button type="submit" class="btn btn-primary btn-block btn-large" style="height:30px;width:200px">Predict</button>
+        </form>
+        <br>
+        {{ prediction_text}}
+    </div>
+
+
+</body>
+</html>

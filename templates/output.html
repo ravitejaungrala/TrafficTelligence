@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+      body {
+    background-image: url('https://i.postimg.cc/PrMT12cB/Gemini-Generated-Image-isavygisavygisav.jpg');
+    background-size: 100% auto; /* Makes the width 100% of the screen while maintaining height */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the background image */
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Ensures full viewport height */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+}
+
+
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+        }
+        img {
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Traffic Volume Prediction</h1>
+
+    <div class="container">
+        <h2>{{ prediction_text }}</h2>
+<!--        <img src="data:image/png;base64, {{ url_3 }}" alt="Prediction Chart" height="180">-->
+<!--        <img src="data:image/png;base64, {{ url_1}}" alt="Prediction Chart" height="180">-->
+<!--        <img src="data:image/png;base64, {{ url_4 }}" alt="Prediction Chart" height="180">-->
+<!--        <br>-->
+<!--        <img src="data:image/png;base64, {{ url_2 }}" alt="Prediction Chart" height="150">-->
+    </div>
+
+</body>
+</html>
